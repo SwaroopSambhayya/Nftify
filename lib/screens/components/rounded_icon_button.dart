@@ -7,11 +7,15 @@ class RoundedIconButton extends StatelessWidget {
   final Color? backgroundColor;
   final double? elevation;
   final BoxBorder? border;
+  final Color? iconColor;
+  final void Function()? onPress;
   const RoundedIconButton(
       {Key? key,
       required this.size,
       required this.iconData,
       this.border,
+      this.iconColor,
+      this.onPress,
       this.elevation,
       this.backgroundColor})
       : super(key: key);
@@ -21,10 +25,10 @@ class RoundedIconButton extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(shape: BoxShape.circle, border: border),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: onPress ?? () {},
         child: Icon(
           iconData,
-          color: getColorForTheme(context),
+          color: iconColor ?? getColorForTheme(context),
         ),
         style: ElevatedButton.styleFrom(
             fixedSize: size,

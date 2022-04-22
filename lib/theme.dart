@@ -27,7 +27,9 @@ ThemeData getLightThemeData() {
 
 ThemeData getDarkThemeData() {
   ThemeData darkTheme = ThemeData(
-      colorScheme: const ColorScheme.dark(secondary: Color(0xff394358)),
+      colorScheme: const ColorScheme.dark(
+          secondary: Color(0xff394358),
+          primaryVariant: Colors.lightGreenAccent),
       primarySwatch: Colors.lightGreen,
       iconTheme: const IconThemeData(color: Colors.white),
       elevatedButtonTheme: ElevatedButtonThemeData(
