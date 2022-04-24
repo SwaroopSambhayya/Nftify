@@ -1,6 +1,8 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:nftify/theme.dart';
+import 'package:provider/src/provider.dart';
 import 'package:shimmer/shimmer.dart';
 
 class CustomSlider extends StatefulWidget {
@@ -76,7 +78,10 @@ class _CustomSliderState extends State<CustomSlider> {
             Expanded(
               child: Center(
                 child: Shimmer.fromColors(
-                  baseColor: Theme.of(context).primaryColor,
+                  baseColor:
+                      context.watch<ThemeProvider>().currentTheme == 'dark'
+                          ? Theme.of(context).primaryColor
+                          : Theme.of(context).disabledColor,
                   highlightColor: Colors.grey,
                   child: Text(
                     "Let's Get Started",

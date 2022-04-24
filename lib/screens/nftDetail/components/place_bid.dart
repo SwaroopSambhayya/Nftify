@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:nftify/screens/components/glassmorphic_bid.dart';
+import 'package:nftify/theme.dart';
+import 'package:provider/provider.dart';
 
 class PlaceBid extends StatefulWidget {
   final String currency;
@@ -71,7 +73,7 @@ class _PlaceBidState extends State<PlaceBid> {
     final seconds = strDigits(myDuration.inSeconds.remainder(60));
     return Container(
       padding: const EdgeInsets.only(top: 10),
-      margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20)
+      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20)
           .copyWith(bottom: 60),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(50),
@@ -83,11 +85,16 @@ class _PlaceBidState extends State<PlaceBid> {
             padding: const EdgeInsets.all(10.0),
             child: Text(
               "${hours}h   :    ${minutes}m   :    ${seconds}s",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
             ),
           ),
-          Padding(
+          Container(
             padding: const EdgeInsets.only(top: 8.0),
+            decoration: BoxDecoration(
+                color: context.watch<ThemeProvider>().currentTheme == 'light'
+                    ? Colors.grey[200]
+                    : null,
+                borderRadius: BorderRadius.circular(50)),
             child: GlassmorphicBid(bid: widget.bid, currency: widget.currency),
           )
         ],

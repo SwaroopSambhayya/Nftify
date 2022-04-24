@@ -24,6 +24,7 @@ class _CategoriesState extends State<Categories> {
       scrollDirection: Axis.horizontal,
       child: Container(
         margin: const EdgeInsets.only(left: 20),
+        padding: const EdgeInsets.only(top: 10, bottom: 10),
         child: Row(
           children: data
               .map(

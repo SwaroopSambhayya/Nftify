@@ -76,7 +76,8 @@ class _NftHomeState extends State<NftHome> {
                       const Header(),
                       Container(
                         margin: const EdgeInsets.symmetric(
-                            vertical: 30, horizontal: 20),
+                                vertical: 30, horizontal: 20)
+                            .copyWith(bottom: 20),
                         child: Row(
                           children: [
                             const Expanded(
@@ -96,6 +97,7 @@ class _NftHomeState extends State<NftHome> {
                       Container(
                         margin: const EdgeInsets.symmetric(
                                 horizontal: 20, vertical: 20)
+                            .copyWith(top: 15)
                             .copyWith(bottom: 60),
                         child: TCard(
                           cards: customCards,

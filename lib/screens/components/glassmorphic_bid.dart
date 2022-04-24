@@ -58,7 +58,9 @@ class GlassmorphicBid extends StatelessWidget {
                 Text(
                   bid + " " + currency,
                   style: const TextStyle(
-                      fontSize: 18, fontWeight: FontWeight.w800),
+                    fontSize: 18,
+                    fontWeight: FontWeight.w800,
+                  ),
                 )
               ],
             ),

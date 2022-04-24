@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nftify/screens/onboarding/components/custom_slider.dart';
 import 'package:nftify/screens/onboarding/components/render_svg.dart';
+import 'package:nftify/theme.dart';
+import 'package:provider/provider.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({Key? key}) : super(key: key);
@@ -20,11 +22,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           height: MediaQuery.of(context).size.height,
           child: Stack(
             children: [
-              const Positioned(
-                top: -20,
-                right: 0,
-                child: RenderSvg(),
-              ),
+              if (context.watch<ThemeProvider>().currentTheme == 'dark')
+                const Positioned(
+                  top: -20,
+                  right: 0,
+                  child: RenderSvg(),
+                ),
               Positioned(
                 top: 30,
                 child: Padding(

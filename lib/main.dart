@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
           ? ThemeMode.dark
           : ThemeMode.light,
       darkTheme: getDarkThemeData(),
-      home: const NftHome(),
+      home: const OnboardingScreen(),
       routes: {
         'OnBoarding': (context) => const OnboardingScreen(),
         'NftHome': (context) => const NftHome()

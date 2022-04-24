@@ -108,16 +108,18 @@ class _CustomCardState extends State<CustomCard> {
                               child: Text(
                                 widget.cardName,
                                 style: const TextStyle(
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.w800,
-                                ),
+                                    fontSize: 25,
+                                    fontWeight: FontWeight.w800,
+                                    color: Colors.white),
                               ),
                             ),
                             FittedBox(
                               child: Text(
                                 '@' + widget.owner,
                                 style: const TextStyle(
-                                    fontSize: 14, fontWeight: FontWeight.w600),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white),
                               ),
                             )
                           ],
@@ -129,12 +131,9 @@ class _CustomCardState extends State<CustomCard> {
                         size: const Size(55, 55),
                         elevation: 0,
                         iconData: IconlyLight.heart,
+                        iconColor: Colors.white,
                         backgroundColor: Colors.transparent,
-                        border: Border.all(
-                            color: getColorForTheme(
-                              context,
-                            ),
-                            width: 0.5),
+                        border: Border.all(color: Colors.white, width: 0.5),
                       )
                   ],
                 ),

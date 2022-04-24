@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:nftify/screens/components/rounded_icon_button.dart';
+import 'package:nftify/theme.dart';
+import 'package:provider/provider.dart';
 
 class CustomBottomBar extends StatefulWidget {
   const CustomBottomBar({Key? key}) : super(key: key);
@@ -81,18 +83,13 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
                   ? Theme.of(context).colorScheme.primaryVariant
                   : Colors.transparent),
           RoundedIconButton(
-              size: const Size(55, 55),
-              elevation: 0,
-              iconColor: active == Tabs.Settings
-                  ? Theme.of(context).primaryColor
-                  : null,
-              onPress: () => setActiveTabState(Tabs.Settings),
-              iconData: active == Tabs.Settings
-                  ? IconlyBold.setting
-                  : IconlyLight.setting,
-              backgroundColor: active == Tabs.Settings
-                  ? Theme.of(context).colorScheme.primaryVariant
-                  : Colors.transparent)
+            size: const Size(55, 55),
+            elevation: 0,
+            onPress: () => context.read<ThemeProvider>().toggleTheme(),
+            iconData: context.watch<ThemeProvider>().currentTheme == 'dark'
+                ? Icons.light_mode_outlined
+                : Icons.dark_mode_outlined,
+          )
         ],
       ),
     );
