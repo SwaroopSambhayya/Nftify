@@ -64,7 +64,7 @@ class _NftHomeState extends State<NftHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.only(top: 33, bottom: 25),
+        padding: const EdgeInsets.only(top: 33, bottom: 25),
         child: Stack(
           children: [
             Positioned.fill(
